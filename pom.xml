@@ -10,6 +10,7 @@
 
 	<modules>
 		<module>config</module>
+		<module>common</module>
 		<module>monitoring</module>
 		<module>registry</module>
 		<module>auth-service</module>
