@@ -14,6 +14,8 @@
 		<module>monitoring</module>
 		<module>registry</module>
 		<module>auth-service</module>
+		<module>product-service</module>
+		<module>order-service</module>
 		<module>gateway</module>
 	</modules>
 
