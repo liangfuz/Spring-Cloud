@@ -1,6 +1,7 @@
 package com.hdbase.auth.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.Http401AuthenticationEntryPoint;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -14,7 +15,8 @@ import org.springframework.web.filter.CorsFilter;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by wangyunfei on 2017/6/9.
+ * Created by huangdan on 2018/1/25.
+ * 资源服务配置
  */
 @Configuration
 @EnableResourceServer
