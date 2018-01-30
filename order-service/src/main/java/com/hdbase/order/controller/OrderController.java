@@ -26,4 +26,9 @@ public class OrderController {
 		return productClient.get(name);
 	}
 
+	@RequestMapping("/listMembers")
+	public String listMembers() {
+		return productClient.listMembers();
+	}
+
 }

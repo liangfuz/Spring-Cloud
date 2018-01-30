@@ -15,4 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ProductClient {
     @RequestMapping(value = "/get") //方法和ProductController一致
     public String get(@RequestParam(value = "name") String name);
+
+    @RequestMapping(value = "/listMembers") //方法和ProductController一致
+    String listMembers();
 }
