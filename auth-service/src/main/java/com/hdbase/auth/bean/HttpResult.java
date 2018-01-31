@@ -1,7 +1,5 @@
 package com.hdbase.auth.bean;
 
-
-import cn.huace.common.config.SystemConfig;
 import lombok.Data;
 
 /**
