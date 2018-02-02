@@ -18,64 +18,80 @@
 		<module>order-service</module>
 		<module>gateway</module>
 	</modules>
+	<properties>
+		<!--add  java release-->
+		<java.version>1.8</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+		<!--spring boot version-->
+		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
+		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
+		<spring-boot-admin.version>1.5.7</spring-boot-admin.version>
+
+	</properties>
 
 	<dependencyManagement>
-	<dependencies>
-	<dependency>
-		<groupId>org.springframework.cloud</groupId>
-		<artifactId>spring-cloud-dependencies</artifactId>
-		<version>Edgware.RELEASE</version>
-		<type>pom</type>
-		<scope>import</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.6.RELEASE</version>
-		<type>pom</type>
-		<scope>import</scope>
-	</dependency>
-	<dependency>
-		<groupId>de.codecentric</groupId>
-		<artifactId>spring-boot-admin-server</artifactId>
-		<version>1.5.3</version>
-	</dependency>
-	<dependency>
-		<groupId>de.codecentric</groupId>
-		<artifactId>spring-boot-admin-server-ui</artifactId>
-		<version>1.5.3</version>
-	</dependency>
-	<dependency>
-		<groupId>de.codecentric</groupId>
-		<artifactId>spring-boot-admin-server-ui</artifactId>
-		<version>1.5.3</version>
-	</dependency>
-	<dependency>
-		<groupId>de.codecentric</groupId>
-		<artifactId>spring-boot-admin-server-ui-login</artifactId>
-		<version>1.5.3</version>
-	</dependency>
-	<dependency>
-		<groupId>de.codecentric</groupId>
-		<artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
-		<version>1.5.3</version>
-	</dependency>
-	<dependency>
-		<groupId>de.codecentric</groupId>
-		<artifactId>spring-boot-admin-server-ui-turbine</artifactId>
-		<version>1.5.3</version>
-	</dependency>
-	<dependency>
-		<groupId>io.github.openfeign.form</groupId>
-		<artifactId>feign-form</artifactId>
-		<version>2.2.1</version>
-	</dependency>
-	<dependency>
-		<groupId>io.github.openfeign.form</groupId>
-		<artifactId>feign-form-spring</artifactId>
-		<version>2.2.1</version>
-	</dependency>
-	</dependencies>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--spring boot admin start-->
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui-login</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui-hystrix</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-server-ui-turbine</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-starter-client</artifactId>
+				<version>${spring-boot-admin.version}</version>
+			</dependency>
+			<!--spring boot admin end-->
+
+			<dependency>
+				<groupId>io.github.openfeign.form</groupId>
+				<artifactId>feign-form</artifactId>
+				<version>2.2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>io.github.openfeign.form</groupId>
+				<artifactId>feign-form-spring</artifactId>
+				<version>2.2.1</version>
+			</dependency>
+		</dependencies>
 	</dependencyManagement>
 </project>
