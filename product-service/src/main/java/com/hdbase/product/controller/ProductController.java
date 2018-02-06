@@ -2,8 +2,12 @@ package com.hdbase.product.controller;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/product")
 public class ProductController {
 
+	private static Logger logger = LoggerFactory.getLogger(ProductController.class);
+
 	@Value("${members}")
 	private String members;
 
@@ -35,6 +41,12 @@ public class ProductController {
 	@RequestMapping("/listMembers")
 	public String listMembers() {
 		return "hello,our team members: "+members;
+	}
+
+	@RequestMapping(value = "/hello",method = RequestMethod.GET)
+	public ResponseEntity<String> hello(){
+		logger.info("called by product-service");
+		return new ResponseEntity<String>("hello product service!", HttpStatus.OK);
 	}
 
 }

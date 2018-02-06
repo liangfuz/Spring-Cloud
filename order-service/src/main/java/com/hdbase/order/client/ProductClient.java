@@ -2,6 +2,7 @@ package com.hdbase.order.client;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  **/
 @FeignClient(name= "product-service") //配置文件中注册到注册中心的名字
 public interface ProductClient {
-    @RequestMapping(value = "/product/get") //方法和ProductController一致
+    @RequestMapping(value = "/product/get", method= RequestMethod.GET) //方法和ProductController一致
     String get(@RequestParam(value = "name") String name);
 
     @RequestMapping(value = "/product/listMembers") //方法和ProductController一致

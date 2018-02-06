@@ -47,8 +47,14 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 		</dependency>
-	</dependencies>
 
+		<!--引入zipkin -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
