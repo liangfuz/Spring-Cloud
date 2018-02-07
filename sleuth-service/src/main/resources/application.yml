@@ -1,6 +1,6 @@
 spring:
   application:
-    name: zipkin-service
+    name: sleuth-service
 
 server:
   port: 9411
