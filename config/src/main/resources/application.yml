@@ -1,17 +1,33 @@
 spring:
   application:
     name: config
+  profiles:
+     active: native
   cloud:
     config:
+      enabled: true
       server:
-#        native:
-#          search-locations: classpath:/shared
-        git:
-          uri: https://github.com/liangfuz/ConfigRepo
-
-#  profiles:
-#     active: native
-
+        native:
+          search-locations: classpath:/config
+    bus:
+      refresh:
+        enabled: true
+#        git:
+#          uri: https://github.com/liangfuz/ConfigRepo
+#    bus:
+#      refresh:
+#        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: springcloud
+#endpoints:
+#  spring:
+#    cloud:
+#      bus:
+#        refresh:
+#          enabled: true
 server:
   port: 8888
 
@@ -21,7 +37,9 @@ security:
   user:
     name: user
     password: 123456
-
+management:
+  security:
+    enabled: false
 eureka:
   client:
     serviceUrl:
