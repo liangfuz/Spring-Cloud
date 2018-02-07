@@ -16,6 +16,7 @@
 		<module>auth-service</module>
 		<module>product-service</module>
 		<module>order-service</module>
+		<module>sleuth-service</module>
 		<module>gateway</module>
 	</modules>
 	<properties>
@@ -33,6 +34,7 @@
 
         <!--  依赖版本  -->
         <shiro.version>1.3.2</shiro.version>
+		<swagger2.version>2.5.0</swagger2.version>
 
 	</properties>
 
@@ -127,16 +129,18 @@
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>2.2.3</version>
             </dependency>
+			<!--swagger2 start-->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
-                <version>2.5.0</version>
+                <version>${swagger2.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>2.5.0</version>
+                <version>${swagger2.version}</version>
             </dependency>
+			<!--swagger2 end-->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
