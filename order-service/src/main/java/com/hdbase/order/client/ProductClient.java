@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @create 2018-01-25 上午 11:13
  **/
 @FeignClient(name= "product-service") //配置文件中注册到注册中心的名字
-@RequestMapping("/product")
 public interface ProductClient {
-    @RequestMapping(value = "/get") //方法和ProductController一致
-    public String get(@RequestParam(value = "name") String name);
+    @RequestMapping(value = "/product/get") //方法和ProductController一致
+    String get(@RequestParam(value = "name") String name);
 
-    @RequestMapping(value = "/listMembers") //方法和ProductController一致
+    @RequestMapping(value = "/product/listMembers") //方法和ProductController一致
     String listMembers();
 }
