@@ -1,16 +1,31 @@
-server:
-  port: 9060
+#server:
+#  port: 9060
 
 spring:
   application:
     name: auth-service
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    password:
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-      service-url:
-        defaultZone: http://127.0.0.1:8761/eureka/
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888/
+      username: user
+      password: 123456
+      fail-fast: true
+
+#rabbitMq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#  redis:
+#    host: 127.0.0.1
+#    port: 6379
+#    password:
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#      service-url:
+#        defaultZone: http://127.0.0.1:8761/eureka/

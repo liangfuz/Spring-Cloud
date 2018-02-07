@@ -1,6 +1,21 @@
 spring:
   application:
     name: monitoring
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:8888/
+      username: user
+      password: 123456
+      fail-fast: true
+
+#rabbitMq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 #  jackson:
 #    serialization: true
 #  cloud:
@@ -9,14 +24,14 @@ spring:
 #      fail-fast: true
 #      password: ${CONFIG_SERVICE_PASSWORD}
 #      username: user
-server:
-  port: 7088
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
-#关闭安全验证
-management:
-  security:
-    enabled: false
+#server:
+#  port: 7088
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#
+##关闭安全验证
+#management:
+#  security:
+#    enabled: false
