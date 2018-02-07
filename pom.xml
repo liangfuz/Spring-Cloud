@@ -16,7 +16,7 @@
 		<module>auth-service</module>
 		<module>product-service</module>
 		<module>order-service</module>
-		<module>zipkin-service</module>
+		<module>sleuth-service</module>
 		<module>gateway</module>
 	</modules>
 	<properties>
