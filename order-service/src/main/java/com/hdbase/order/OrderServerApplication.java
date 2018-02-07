@@ -8,6 +8,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+
 @EnableFeignClients //开启Feign
 @RefreshScope
 public class OrderServerApplication {
