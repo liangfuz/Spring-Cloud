@@ -11,5 +11,5 @@ spring:
       username: user
       password: 123456
       fail-fast: true
-  session:
-    store-type: redis
+#  session:
+#    store-type: redis
