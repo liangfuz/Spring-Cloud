@@ -1,4 +1,4 @@
-package com.hdbase.auth.bean;
+package cn.hdbase.common.shiro;
 
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.codec.Hex;

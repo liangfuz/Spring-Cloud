@@ -1,6 +1,5 @@
-#server:
-#  port: 9060
-
+server:
+  port: 9060
 spring:
   application:
     name: auth-service
@@ -12,14 +11,5 @@ spring:
       username: user
       password: 123456
       fail-fast: true
-
-#  redis:
-#    host: 127.0.0.1
-#    port: 6379
-#    password:
-#eureka:
-#  instance:
-#    prefer-ip-address: true
-#  client:
-#      service-url:
-#        defaultZone: http://127.0.0.1:8761/eureka/
+  session:
+    store-type: redis

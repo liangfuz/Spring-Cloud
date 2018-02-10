@@ -1,4 +1,4 @@
-package com.hdbase.auth.bean;
+package cn.hdbase.common.shiro;
 
 import com.google.common.base.Objects;
 

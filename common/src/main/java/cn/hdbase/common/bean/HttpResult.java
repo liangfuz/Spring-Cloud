@@ -1,6 +1,4 @@
 package cn.hdbase.common.bean;
-
-import cn.hdbase.common.config.SystemConfig;
 import lombok.Data;
 
 /**
@@ -24,8 +22,6 @@ public class HttpResult {
     private static int STATE_FAIL=404;
 
     public static int STATE_UNAUTHORIZED=401;
-
-    private String imgPre= SystemConfig.getInstance().getImgPre();
 
     public HttpResult(int state,String msg,Object content,Object extra){
         this.state=state;

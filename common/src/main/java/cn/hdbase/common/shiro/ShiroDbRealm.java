@@ -1,8 +1,6 @@
-package com.hdbase.auth.service;
+package cn.hdbase.common.shiro;
 
-import com.hdbase.auth.bean.MySimpleByteSource;
-import com.hdbase.auth.bean.ShiroUser;
-import com.hdbase.auth.util.Digests;
+import cn.hdbase.common.utils.Digests;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.shiro.authc.*;
@@ -11,7 +9,6 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;

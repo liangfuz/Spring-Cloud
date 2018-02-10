@@ -1,15 +1,9 @@
-package com.hdbase.auth.config;
-
+package com.hdbase.product.config;
 
 
 import cn.hdbase.common.cache.ShrioRedisCacheManager;
 import cn.hdbase.common.shiro.ShiroDbRealm;
-import com.google.common.base.Strings;
 import com.google.common.collect.Maps;
-
-import feign.Feign;
-import feign.RequestInterceptor;
-import feign.RequestTemplate;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.filter.authc.AnonymousFilter;
@@ -19,7 +13,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import javax.servlet.DispatcherType;
@@ -32,17 +25,6 @@ import java.util.Map;
  */
 @Configuration
 public class ShiroConfig {
-
-    @Bean
-    public RequestInterceptor requestInterceptor() {
-        return requestTemplate -> {
-            String sessionId = RequestContextHolder.currentRequestAttributes().getSessionId();
-            if (!Strings.isNullOrEmpty(sessionId)) {
-                requestTemplate.header("Cookie", "SESSION=" + sessionId);
-            }
-        };
-    }
-
     /**
      * FilterRegistrationBean
      * @return
@@ -80,6 +62,7 @@ public class ShiroConfig {
         chains.put("/rest/**", "anon");
         chains.put("/layer/**", "anon");
         chains.put("/admin/**", "authc,perms");
+        chains.put("/product/**", "authc,perms");
         bean.setFilterChainDefinitionMap(chains);
         return bean;
     }
